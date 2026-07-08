@@ -1,18 +1,7 @@
-import React, { useState } from 'react';
 import { useTheme } from '../components/ThemeContext';
 
 export function DataDeletion() {
   const { theme } = useTheme();
-  const [email, setEmail] = useState('');
-
-  // Function to generate mailto link
-  const getMailtoLink = () => {
-    const subject = encodeURIComponent('Data Deletion Request');
-    const body = encodeURIComponent(
-      `Hello,\n\nI would like to request deletion of all my data associated with this email: ${email}\n\nThank you.`
-    );
-    return `mailto:support@kayoon.org?subject=${subject}&body=${body}`;
-  };
 
   return (
     <div
@@ -24,50 +13,34 @@ export function DataDeletion() {
           className="text-3xl font-bold mb-8"
           style={{ color: theme.colors.primary }}
         >
-          Request Data Deletion
+          Delete Your Data
         </h1>
         <div className="prose" style={{ color: theme.colors.onBackground }}>
           <p className="mb-6">
-            If you wish to delete all your data from our app, please enter your email address below and click the button. This will open your email app with a pre-filled message to our support team.
+            Rou has no accounts and no server — all of your routines, steps,
+            and history are stored only in a local database on your own
+            device. We never receive a copy, so there is nothing for us to
+            delete on our end. You're always in full control of your data,
+            directly on your device:
           </p>
-          <form className="space-y-4 max-w-md" onSubmit={e => e.preventDefault()}>
-            <label htmlFor="email" className="block font-medium">
-              Email Address
-            </label>
-            <input
-              id="email"
-              type="email"
-              required
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              className="w-full px-4 py-2 rounded border focus:outline-none focus:ring-2"
-              style={{
-                backgroundColor: theme.colors.surface,
-                color: theme.colors.onSurface,
-                borderColor: theme.colors.outline,
-              }}
-              placeholder="your@email.com"
-            />
-            <a
-              href={getMailtoLink()}
-              className="inline-block px-6 py-2 rounded font-semibold shadow transition-transform hover:scale-105 text-center"
-              style={{
-                backgroundColor: theme.colors.primary,
-                color: theme.colors.onPrimary,
-                pointerEvents: email ? 'auto' : 'none',
-                opacity: email ? 1 : 0.6,
-              }}
-              tabIndex={email ? 0 : -1}
-              aria-disabled={!email}
-              onClick={e => {
-                if (!email) e.preventDefault();
-              }}
-            >
-              Request Deletion
-            </a>
-          </form>
+          <ul className="list-disc pl-6 mb-6">
+            <li className="mb-2">
+              Open Rou and go to <strong>Settings → Delete Your Data</strong>{' '}
+              to instantly and permanently erase all routines, steps, and run
+              history stored on your device.
+            </li>
+            <li>
+              Uninstalling the app also removes all of its local data from
+              your device.
+            </li>
+          </ul>
+          <p className="mb-4">
+            If you have any questions about how Rou handles data, you can
+            reach us at{' '}
+            <a href="mailto:support@kayoon.org">support@kayoon.org</a>.
+          </p>
         </div>
       </div>
     </div>
   );
-} 
+}
