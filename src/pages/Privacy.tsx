@@ -39,7 +39,7 @@ export function Privacy() {
             </li>
           </ul>
           <p className="mb-4">
-            Rou does not use analytics, crash reporting, advertising, or tracking SDKs of any kind, and does not use Google Sign-In, Firebase, or any other cloud backend.
+            Rou has no cloud backend and does not use analytics, crash reporting, advertising, or tracking of any kind.
           </p>
 
           <h2 className="text-xl font-semibold mt-8 mb-4">3. How We Use Your Information</h2>
@@ -69,7 +69,7 @@ export function Privacy() {
 
           <h2 className="text-xl font-semibold mt-8 mb-4">6. Third-Party Services</h2>
           <p className="mb-4">
-            Rou does not integrate with any third-party services that receive your data. The app does not use Google Sign-In, Firebase, Google Analytics, Crashlytics, or any advertising network.
+            Rou does not integrate with any third-party service that collects or receives your data.
           </p>
 
           <h2 className="text-xl font-semibold mt-8 mb-4">7. Children's Privacy</h2>
