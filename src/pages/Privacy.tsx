@@ -1,24 +1,11 @@
-import { useTheme } from '../components/ThemeContext';
-
 export function Privacy() {
-  const { theme } = useTheme();
-
   return (
-    <div
-      className="min-h-screen pt-20 px-4 sm:px-6 lg:px-8"
-      style={{ backgroundColor: theme.colors.background }}
-    >
-      <div className="max-w-3xl mx-auto py-12">
-        <h1
-          className="text-3xl font-bold mb-8"
-          style={{ color: theme.colors.primary }}
-        >
+    <div className="px-6">
+      <div className="mx-auto max-w-3xl py-16">
+        <h1 className="mb-8 text-4xl font-extrabold tracking-tight text-primary">
           Privacy Policy
         </h1>
-        <div
-          className="prose"
-          style={{ color: theme.colors.onBackground }}
-        >
+        <div className="leading-relaxed text-on-surface [&_a]:text-primary [&_a]:underline">
           <p className="mb-4">Last updated: July 9, 2026</p>
 
           <h2 className="text-xl font-semibold mt-8 mb-4">1. Introduction</h2>
