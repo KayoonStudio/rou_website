@@ -12,7 +12,7 @@ const linkClass =
   'text-on-surface-variant no-underline transition-colors hover:text-primary';
 
 const ctaClass =
-  'inline-flex min-h-11 items-center rounded-full bg-primary px-5 text-white no-underline transition-colors hover:bg-primary-hover';
+  'inline-flex min-h-11 items-center whitespace-nowrap rounded-full bg-primary px-5 text-white no-underline transition-colors hover:bg-primary-hover';
 
 function SectionLink({
   id,
@@ -44,7 +44,7 @@ export function Navbar() {
     <header className="border-b border-surface-variant bg-surface">
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-4 px-6 py-4"
+        className="mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-6 py-4"
       >
         <Link
           to="/"
@@ -54,20 +54,21 @@ export function Navbar() {
           <img src={rouIcon} alt="" className="size-9 rounded-[10px]" />
           <span className="text-[22px] font-extrabold tracking-tight">Rou</span>
         </Link>
-        <ul className="flex flex-wrap items-center gap-x-7 gap-y-2 text-[15px] font-semibold">
-          {SECTIONS.map(({ id, label }) => (
-            <li key={id}>
-              <SectionLink id={id} className={linkClass}>
-                {label}
-              </SectionLink>
-            </li>
-          ))}
-          <li>
-            <SectionLink id="download" className={ctaClass}>
-              Get the app
-            </SectionLink>
-          </li>
-        </ul>
+        <div className="flex items-center gap-7 text-[15px] font-semibold">
+          {/* Section jumps only fit beside the logo from md up; on phones the header is logo + CTA. */}
+          <ul className="hidden items-center gap-7 md:flex">
+            {SECTIONS.map(({ id, label }) => (
+              <li key={id}>
+                <SectionLink id={id} className={linkClass}>
+                  {label}
+                </SectionLink>
+              </li>
+            ))}
+          </ul>
+          <SectionLink id="download" className={ctaClass}>
+            Get the app
+          </SectionLink>
+        </div>
       </nav>
     </header>
   );
