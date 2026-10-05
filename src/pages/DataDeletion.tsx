@@ -1,21 +1,11 @@
-import { useTheme } from '../components/ThemeContext';
-
 export function DataDeletion() {
-  const { theme } = useTheme();
-
   return (
-    <div
-      className="min-h-screen pt-20 px-4 sm:px-6 lg:px-8"
-      style={{ backgroundColor: theme.colors.background }}
-    >
-      <div className="max-w-3xl mx-auto py-12">
-        <h1
-          className="text-3xl font-bold mb-8"
-          style={{ color: theme.colors.primary }}
-        >
+    <div className="px-6">
+      <div className="mx-auto max-w-3xl py-16">
+        <h1 className="mb-8 text-4xl font-extrabold tracking-tight text-primary">
           Delete Your Data
         </h1>
-        <div className="prose" style={{ color: theme.colors.onBackground }}>
+        <div className="leading-relaxed text-on-surface [&_a]:text-primary [&_a]:underline">
           <p className="mb-6">
             Rou has no accounts and no server — all of your routines, steps,
             and history are stored only in a local database on your own
